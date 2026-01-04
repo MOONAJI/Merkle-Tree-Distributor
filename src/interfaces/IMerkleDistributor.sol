@@ -21,12 +21,7 @@ interface IMerkleDistributor {
         uint256 endTime
     );
 
-    event Claimed(
-        uint256 indexed distributionId,
-        address indexed user,
-        uint256 amount,
-        uint256 timestamp
-    );
+    event Claimed(uint256 indexed distributionId, address indexed user, uint256 amount, uint256 timestamp);
 
     function createDistribution(
         bytes32 merkleRoot,
@@ -36,21 +31,12 @@ interface IMerkleDistributor {
         uint256 endTime
     ) external returns (uint256 distributionId);
 
-    function claim(
-        uint256 distributionId,
-        uint256 amount,
-        bytes32[] calldata merkleProof
-    ) external;
+    function claim(uint256 distributionId, uint256 amount, bytes32[] calldata merkleProof) external;
 
-    function hasClaimed(
-        uint256 distributionId,
-        address user
-    ) external view returns (bool);
+    function hasClaimed(uint256 distributionId, address user) external view returns (bool);
 
-    function verifyProof(
-        uint256 distributionId,
-        address user,
-        uint256 amount,
-        bytes32[] calldata merkleProof
-    ) external view returns (bool);
+    function verifyProof(uint256 distributionId, address user, uint256 amount, bytes32[] calldata merkleProof)
+        external
+        view
+        returns (bool);
 }
