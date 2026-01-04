@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 import "forge-std/Test.sol";
 import "../src/MerkleDistributor.sol";
 import "../src/mocks/MockERC20.sol";
-import "./utils/MerkleTreeHelper.sol";
+import "./Utils/MerkleTreeHelper.sol";
 
 contract MerkleDistributorTest is Test, MerkleTreeHelper {
     MerkleDistributor public distributor;
